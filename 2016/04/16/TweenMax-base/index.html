@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>TweenMax基础入门 | eval&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="to()&amp;#x79FB;&amp;#x52A8;&amp;#x5230;&amp;#x76EE;&amp;#x6807;&amp;#x70B9;   &amp;#x53C2;&amp;#x6570;&amp;#x4E00;&amp;#xFF1A;&amp;#x5143;&amp;#x7D20;&amp;#x6216;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61; &amp;#x53C2;&amp;#x6570;&amp;#x4E8C;&amp;#xFF1A;&amp;#x6267;&amp;#x884C;&amp;#x65F6;&amp;#x95F4;">
+<meta name="keywords" content="TweenMax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TweenMax基础入门">
+<meta property="og:url" content="http://everyding.github.io/2016/04/16/TweenMax-base/index.html">
+<meta property="og:site_name" content="eval&#39;s blog">
+<meta property="og:description" content="to()&amp;#x79FB;&amp;#x52A8;&amp;#x5230;&amp;#x76EE;&amp;#x6807;&amp;#x70B9;   &amp;#x53C2;&amp;#x6570;&amp;#x4E00;&amp;#xFF1A;&amp;#x5143;&amp;#x7D20;&amp;#x6216;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61; &amp;#x53C2;&amp;#x6570;&amp;#x4E8C;&amp;#xFF1A;&amp;#x6267;&amp;#x884C;&amp;#x65F6;&amp;#x95F4;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-07T06:52:28.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TweenMax基础入门">
+<meta name="twitter:description" content="to()&amp;#x79FB;&amp;#x52A8;&amp;#x5230;&amp;#x76EE;&amp;#x6807;&amp;#x70B9;   &amp;#x53C2;&amp;#x6570;&amp;#x4E00;&amp;#xFF1A;&amp;#x5143;&amp;#x7D20;&amp;#x6216;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61; &amp;#x53C2;&amp;#x6570;&amp;#x4E8C;&amp;#xFF1A;&amp;#x6267;&amp;#x884C;&amp;#x65F6;&amp;#x95F4;">
+  
+    <link rel="alternative" href="/atom.xml" title="eval&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-TweenMax-base" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TweenMax基础入门
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/16/TweenMax-base/" class="article-date">
+  <time datetime="2016-04-16T08:35:09.000Z" itemprop="datePublished">2016-04-16 16:35:09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="to"><a href="#to" class="headerlink" title="to()"></a>to()</h2><p><strong>&#x79FB;&#x52A8;&#x5230;&#x76EE;&#x6807;&#x70B9;</strong></p>
+<blockquote>
+<ul>
+<li>&#x53C2;&#x6570;&#x4E00;&#xFF1A;&#x5143;&#x7D20;&#x6216;&#x8005;&#x5BF9;&#x8C61;</li>
+<li>&#x53C2;&#x6570;&#x4E8C;&#xFF1A;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF09;</li>
+<li>&#x53C2;&#x6570;&#x4E09;&#xFF1A;&#x79FB;&#x52A8;&#x5230;&#x76EE;&#x6807;&#x70B9;&#x5C5E;&#x6027;&#xFF0C;&#x56DE;&#x8C03;&#x4E5F;&#x5728;&#x8BE5;&#x5BF9;&#x8C61;&#x4E2D;</li>
+<li>&#x53C2;&#x6570;&#x56DB;&#xFF1A;&#x5EF6;&#x65F6;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF0C;&#x9664;&#x4E86;&#x6570;&#x5B57;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8BF8;&#x5982;&#xFF1A;&#x2019;+=1&#x2019;&#x3001;&#x2019;-=0.5&#x2019;&#xFF09;</li>
+</ul>
+</blockquote>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> TimelineMax();</span><br><span class="line"></span><br><span class="line">t.to(box, <span class="number">1</span>, { <span class="attr">width</span>: <span class="number">200</span>, <span class="attr">onComplete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    alert(<span class="number">20</span>);</span><br><span class="line">}}, <span class="number">1</span>);</span><br><span class="line">t.to(box, <span class="number">1</span>, { <span class="attr">height</span>: <span class="number">200</span>, <span class="attr">onReverseComplete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">        alert(<span class="string">&apos;&#x9AD8;&#x5EA6;100px&apos;</span>);</span><br><span class="line">    } }, <span class="string">&apos;+=1&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">2</span>, { <span class="attr">left</span>: <span class="number">200</span> });</span><br><span class="line">t.to(box, <span class="number">2</span>, { <span class="attr">top</span>: <span class="number">200</span> });</span><br><span class="line">t.to(box, <span class="number">2</span>, { <span class="attr">rotation</span>: <span class="number">180</span> });</span><br><span class="line">t.to(box, <span class="number">2</span>, { <span class="attr">opacity</span>: <span class="number">0</span> });</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="play-&#x3001;stop-&#x3001;reverse-&#x3001;clear"><a href="#play-&#x3001;stop-&#x3001;reverse-&#x3001;clear" class="headerlink" title="play()&#x3001;stop()&#x3001;reverse()&#x3001;clear()"></a>play()&#x3001;stop()&#x3001;reverse()&#x3001;clear()</h2><p>&#x5206;&#x522B;&#x8868;&#x793A;&#xFF1A;<code>&#x5F00;&#x59CB;&#x8FD0;&#x52A8;</code>&#x3001;<code>&#x505C;&#x6B62;&#x8FD0;&#x52A8;</code>&#x3001;<code>&#x53CD;&#x8F6C;&#x8FD0;&#x52A8;</code>&#x3001;<code>&#x6E05;&#x9664;&#x52A8;&#x753B;</code></p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">btnPlay.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    t.play();</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">btnStop.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    t.stop();</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">btnReverse.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    t.reverse();</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">btnClear.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    t.clear();</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<h2 id="add-&#x3001;tweenTo"><a href="#add-&#x3001;tweenTo" class="headerlink" title="add()&#x3001;tweenTo()"></a>add()&#x3001;tweenTo()</h2><p>add()&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x72B6;&#x6001;&#xFF0C;tweenTo()&#x6807;&#x8BC6;&#x8FD0;&#x52A8;&#x5230;&#x90A3;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x5373;&#x53EF;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> TimelineMax();</span><br><span class="line"></span><br><span class="line">t.add(<span class="string">&apos;state0&apos;</span>);<span class="comment">//&#x6DFB;&#x52A0;&#x72B6;&#x6001;&#xFF1A;&apos;state0&apos;</span></span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">width</span>: <span class="number">200</span>}, <span class="number">1</span>);</span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">height</span>: <span class="number">200</span>}, <span class="string">&apos;+=1&apos;</span>);</span><br><span class="line">t.add(<span class="string">&apos;state1&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">left</span>: <span class="number">200</span>});</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">top</span>: <span class="number">200</span>});</span><br><span class="line">t.add(<span class="string">&apos;state2&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">rotation</span>: <span class="number">180</span>});</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">opacity</span>: <span class="number">0</span>});</span><br><span class="line">t.add(<span class="string">&apos;state3&apos;</span>);</span><br><span class="line">t.stop();</span><br><span class="line"></span><br><span class="line">t.tweenTo(<span class="string">&apos;state2&apos;</span>);<span class="comment">//&#x8FD0;&#x52A8;&#x5230;&#x72B6;&#x6001;&#xFF1A;&apos;state2&apos;</span></span><br></pre></td></tr></table></figure>
+<h2 id="time"><a href="#time" class="headerlink" title="time()"></a>time()</h2><p>time()&#x83B7;&#x53D6;&#x52A8;&#x753B;&#x6267;&#x884C;&#x7684;&#x65F6;&#x95F4;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> TimelineMax();</span><br><span class="line"></span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">width</span>: <span class="number">200</span>}, <span class="number">1</span>);</span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">height</span>: <span class="number">200</span>, <span class="attr">onComplete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line"> alert(<span class="string">&apos;&#x6267;&#x884C;&#x65F6;&#x95F4;&apos;</span> + t.time() + <span class="string">&apos;&#x79D2;&apos;</span>);</span><br><span class="line">}}, <span class="string">&apos;+=1&apos;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="totalDuration-&#x3001;currentLabel-&#x3001;getLabelTime"><a href="#totalDuration-&#x3001;currentLabel-&#x3001;getLabelTime" class="headerlink" title="totalDuration()&#x3001;currentLabel()&#x3001;getLabelTime()"></a>totalDuration()&#x3001;currentLabel()&#x3001;getLabelTime()</h2><p>totalDuration()&#x52A8;&#x753B;&#x6267;&#x884C;&#x603B;&#x65F6;&#x95F4;&#xFF0C;currentLabel()&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#xFF0C;getLabelTime()&#x8BE5;&#x72B6;&#x6001;&#x4E0B;&#x6267;&#x884C;&#x65F6;&#x95F4;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> TimelineMax();</span><br><span class="line"></span><br><span class="line">t.add(<span class="string">&apos;state0&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">width</span>: <span class="number">200</span>}, <span class="number">1</span>);</span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">height</span>: <span class="number">200</span>}, <span class="string">&apos;+=1&apos;</span>);</span><br><span class="line">t.add(<span class="string">&apos;state1&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">left</span>: <span class="number">200</span>, <span class="attr">onComplete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    alert(<span class="string">&apos;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xFF1A;&apos;</span> + t.getLabelTime(t.currentLabel()));</span><br><span class="line">}});</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">top</span>: <span class="number">200</span>});</span><br><span class="line">t.add(<span class="string">&apos;state2&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">rotation</span>: <span class="number">180</span>, <span class="attr">onComplete</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    alert(<span class="string">&apos;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&apos;</span> + t.currentLabel());</span><br><span class="line">}});</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">opacity</span>: <span class="number">0</span>});</span><br><span class="line">t.add(<span class="string">&apos;state3&apos;</span>);</span><br><span class="line"></span><br><span class="line">alert(<span class="string">&apos;&#x52A8;&#x753B;&#x6267;&#x884C;&#x603B;&#x65F6;&#x95F4;&#xFF1A;&apos;</span> + t.totalDuration());</span><br></pre></td></tr></table></figure>
+<h2 id="getLabelBefore-&#x3001;getLabelAfter"><a href="#getLabelBefore-&#x3001;getLabelAfter" class="headerlink" title="getLabelBefore()&#x3001;getLabelAfter()"></a>getLabelBefore()&#x3001;getLabelAfter()</h2><p>getLabelBefore()&#x4E0A;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;getLabelAfter()&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> TimelineMax();</span><br><span class="line"></span><br><span class="line">t.add(<span class="string">&apos;state0&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">width</span>: <span class="number">200</span>}, <span class="number">1</span>);</span><br><span class="line">t.to(box, <span class="number">1</span>, {<span class="attr">height</span>: <span class="number">200</span>, <span class="attr">onComplete</span>: getInfo}, <span class="string">&apos;+=1&apos;</span>);</span><br><span class="line"></span><br><span class="line">t.add(<span class="string">&apos;state1&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">left</span>: <span class="number">200</span>});</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">top</span>: <span class="number">200</span>, <span class="attr">onComplete</span>: getInfo});</span><br><span class="line"></span><br><span class="line">t.add(<span class="string">&apos;state2&apos;</span>);</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">rotation</span>: <span class="number">180</span>});</span><br><span class="line">t.to(box, <span class="number">2</span>, {<span class="attr">opacity</span>: <span class="number">0</span>, <span class="attr">onComplete</span>: getInfo});</span><br><span class="line"></span><br><span class="line">t.add(<span class="string">&apos;state3&apos;</span>);</span><br><span class="line"></span><br><span class="line">getInfo();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> currentLabel = t.currentLabel();<span class="comment">//&#x5F53;&#x524D;&#x72B6;&#x6001;</span></span><br><span class="line">    <span class="keyword">var</span> currentTime = t.getLabelTime(currentLabel);<span class="comment">//&#x5F53;&#x524D;&#x65F6;&#x95F4;</span></span><br><span class="line">    <span class="keyword">var</span> beforeLabel = t.getLabelBefore(currentTime);</span><br><span class="line">    <span class="keyword">var</span> afterLabel = t.getLabelAfter(currentTime);</span><br><span class="line"></span><br><span class="line">    info.innerHTML = <span class="string">&apos;&#x4E0A;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF1A;&apos;</span> + beforeLabel + <span class="string">&apos;&lt;br&gt;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;&apos;</span> + currentLabel + <span class="string">&apos;&lt;br&gt;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#xFF1A;&apos;</span> + afterLabel;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="seek"><a href="#seek" class="headerlink" title="seek()"></a>seek()</h2><p>seek()&#x76F4;&#x63A5;&#x6267;&#x884C;&#x5230;&#x76EE;&#x6807;&#xFF0C;&#x65E0;&#x52A8;&#x753B;&#x7279;&#x6548;</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/09/f2e-standard/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端开发规范
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/16/cross-domain/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">跨域解决方案</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-TweenMax-base" data-title="TweenMax基础入门" data-url="http://everyding.github.io/2016/04/16/TweenMax-base/" data-limit="50"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:'eval'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/everyding" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2019 eval 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/everyding" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>微信页面授权登陆 | eval&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x7B2C;&amp;#x4E00;&amp;#x6B65;&amp;#xFF1A;&amp;#x5FAE;&amp;#x4FE1;&amp;#x516C;&amp;#x4F17;&amp;#x5E73;&amp;#x53F0;&amp;#x914D;&amp;#x7F6E;&amp;#x9996;&amp;#x5148;&amp;#x767B;&amp;#x9646;&amp;#x5FAE;&amp;#x4FE1;&amp;#x516C;&amp;#x4F17;&amp;#x5E73;&amp;#x53F0;&amp;#xFF0C;&amp;#x70B9;&amp;#x51FB;">
+<meta name="keywords" content="微信授权登陆">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信页面授权登陆">
+<meta property="og:url" content="http://everyding.github.io/2016/04/08/weixin-auth/index.html">
+<meta property="og:site_name" content="eval&#39;s blog">
+<meta property="og:description" content="&amp;#x7B2C;&amp;#x4E00;&amp;#x6B65;&amp;#xFF1A;&amp;#x5FAE;&amp;#x4FE1;&amp;#x516C;&amp;#x4F17;&amp;#x5E73;&amp;#x53F0;&amp;#x914D;&amp;#x7F6E;&amp;#x9996;&amp;#x5148;&amp;#x767B;&amp;#x9646;&amp;#x5FAE;&amp;#x4FE1;&amp;#x516C;&amp;#x4F17;&amp;#x5E73;&amp;#x53F0;&amp;#xFF0C;&amp;#x70B9;&amp;#x51FB;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://everyding.github.io/2016/04/08/weixin-auth/1.png">
+<meta property="og:image" content="http://everyding.github.io/2016/04/08/weixin-auth/2.png">
+<meta property="og:updated_time" content="2019-03-07T06:52:28.482Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信页面授权登陆">
+<meta name="twitter:description" content="&amp;#x7B2C;&amp;#x4E00;&amp;#x6B65;&amp;#xFF1A;&amp;#x5FAE;&amp;#x4FE1;&amp;#x516C;&amp;#x4F17;&amp;#x5E73;&amp;#x53F0;&amp;#x914D;&amp;#x7F6E;&amp;#x9996;&amp;#x5148;&amp;#x767B;&amp;#x9646;&amp;#x5FAE;&amp;#x4FE1;&amp;#x516C;&amp;#x4F17;&amp;#x5E73;&amp;#x53F0;&amp;#xFF0C;&amp;#x70B9;&amp;#x51FB;">
+<meta name="twitter:image" content="http://everyding.github.io/2016/04/08/weixin-auth/1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="eval&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-weixin-auth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信页面授权登陆
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/08/weixin-auth/" class="article-date">
+  <time datetime="2016-04-08T07:50:14.000Z" itemprop="datePublished">2016-04-08 15:50:14</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;"><a href="#&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;" class="headerlink" title="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;"></a>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;</h3><p>&#x9996;&#x5148;&#x767B;&#x9646;<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;</a>&#xFF0C;&#x70B9;&#x51FB;&#x5DE6;&#x4FA7;&#x83DC;&#x5355; &#x5F00;&#x53D1; -&gt; &#x63A5;&#x53E3;&#x6743;&#x9650;&#xFF0C;&#x627E;&#x5230;&#x2018;&#x7F51;&#x9875;&#x6388;&#x6743;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x2019;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><img src="/2016/04/08/weixin-auth/1.png" alt></p>
+<a id="more"></a>
+<p>&#x6211;&#x4EEC;&#x70B9;&#x51FB;&#x4FEE;&#x6539;&#xFF0C;&#x7136;&#x540E;&#x586B;&#x4E0A;&#x9700;&#x8981;&#x6388;&#x6743;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><img src="/2016/04/08/weixin-auth/2.png" alt></p>
+<h3 id="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x63D0;&#x4F9B;&#x7684;&#x5F00;&#x53D1;&#x6587;&#x6863;&#x6388;&#x6743;&#x5E76;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x540D;&#x548C;&#x5934;&#x50CF;"><a href="#&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x63D0;&#x4F9B;&#x7684;&#x5F00;&#x53D1;&#x6587;&#x6863;&#x6388;&#x6743;&#x5E76;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x540D;&#x548C;&#x5934;&#x50CF;" class="headerlink" title="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x63D0;&#x4F9B;&#x7684;&#x5F00;&#x53D1;&#x6587;&#x6863;&#x6388;&#x6743;&#x5E76;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x540D;&#x548C;&#x5934;&#x50CF;"></a>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x63D0;&#x4F9B;&#x7684;&#x5F00;&#x53D1;&#x6587;&#x6863;&#x6388;&#x6743;&#x5E76;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x540D;&#x548C;&#x5934;&#x50CF;</h3><h4 id="1-&#x83B7;&#x53D6;code"><a href="#1-&#x83B7;&#x53D6;code" class="headerlink" title="1.&#x83B7;&#x53D6;code"></a>1.&#x83B7;&#x53D6;code</h4><p>&#x53EA;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#xFF1A;<a href="javascript:;" target="_blank" rel="noopener">https://open.weixin.qq.com/connect/oauth2/authorize?appid=<strong>&#x60A8;&#x7684;appid</strong>&amp;redirect_uri=<strong>&#x6388;&#x6743;&#x5730;&#x5740;&#x6210;&#x529F;&#x540E;&#x8DF3;&#x8F6C;URL</strong>&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=1&amp;connect_redirect=1#wechat_redirect</a></p>
+<h4 id="2-&#x901A;&#x8FC7;code&#x83B7;&#x53D6;access-token&#xFF0C;&#x518D;&#x6839;&#x636E;access-token&#x83B7;&#x53D6;userinfo"><a href="#2-&#x901A;&#x8FC7;code&#x83B7;&#x53D6;access-token&#xFF0C;&#x518D;&#x6839;&#x636E;access-token&#x83B7;&#x53D6;userinfo" class="headerlink" title="2.&#x901A;&#x8FC7;code&#x83B7;&#x53D6;access_token&#xFF0C;&#x518D;&#x6839;&#x636E;access_token&#x83B7;&#x53D6;userinfo"></a>2.&#x901A;&#x8FC7;code&#x83B7;&#x53D6;access_token&#xFF0C;&#x518D;&#x6839;&#x636E;access_token&#x83B7;&#x53D6;userinfo</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#x901A;&#x8FC7;code&#x83B7;&#x53D6;access_token</span></span><br><span class="line">$code = $_GET[<span class="string">&apos;code&apos;</span>];</span><br><span class="line">$appid = <span class="string">&quot;&#x60A8;&#x7684;appid&quot;</span>;</span><br><span class="line">$appsecret = <span class="string">&quot;&#x60A8;&#x7684;appsecret&quot;</span>;</span><br><span class="line">$url = <span class="string">&quot;https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&amp;secret=$appsecret&amp;code=$code&amp;grant_type=authorization_code&quot;</span>;</span><br><span class="line">$result = https_request($url);</span><br><span class="line">$jsoninfo = json_decode($result, <span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x6839;&#x636E;access_token&#x83B7;&#x53D6;userinfo</span></span><br><span class="line">$openid = $jsoninfo[<span class="string">&quot;openid&quot;</span>];</span><br><span class="line">$access_token = $jsoninfo[<span class="string">&quot;access_token&quot;</span>];</span><br><span class="line">$url1 = <span class="string">&quot;https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&amp;openid=$openid&amp;lang=zh_CN&quot;</span>;</span><br><span class="line">$result1 = https_request($url1);</span><br><span class="line">$jsoninfo1 = json_decode($result1, <span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">https_request</span><span class="params">($url, $data = null)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    $curl = curl_init();</span><br><span class="line">    curl_setopt($curl, CURLOPT_URL, $url);</span><br><span class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, <span class="keyword">FALSE</span>);</span><br><span class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, <span class="keyword">FALSE</span>);</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">empty</span>($data)) {</span><br><span class="line">        curl_setopt($curl, CURLOPT_POST, <span class="number">1</span>);</span><br><span class="line">        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);</span><br><span class="line">    }</span><br><span class="line">    curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</span><br><span class="line">    $output = curl_exec($curl);</span><br><span class="line">    curl_close($curl);</span><br><span class="line">    <span class="keyword">return</span> $output;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x7ED3;&#x679C;&#x8FD4;&#x56DE;userinfo</span></span><br><span class="line"><span class="keyword">echo</span> json_encode($jsoninfo1);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/09/front-end-learning-resource/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端学习资源整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/17/see-end/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">侃侃--结局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-weixin-auth" data-title="微信页面授权登陆" data-url="http://everyding.github.io/2016/04/08/weixin-auth/" data-limit="50"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:'eval'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/everyding" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2019 eval 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/everyding" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

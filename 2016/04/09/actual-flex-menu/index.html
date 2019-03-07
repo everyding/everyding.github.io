@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>【实战】弹性菜单 | eval&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x5B9E;&amp;#x73B0;&amp;#x6E90;&amp;#x7801;&amp;#xFF1A;12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head">
+<meta name="keywords" content="弹性运动 透视特效">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【实战】弹性菜单">
+<meta property="og:url" content="http://everyding.github.io/2016/04/09/actual-flex-menu/index.html">
+<meta property="og:site_name" content="eval&#39;s blog">
+<meta property="og:description" content="&amp;#x5B9E;&amp;#x73B0;&amp;#x6E90;&amp;#x7801;&amp;#xFF1A;12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://everyding.github.io/2016/04/09/actual-flex-menu/弹性菜单.gif">
+<meta property="og:updated_time" content="2019-03-07T06:52:28.321Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【实战】弹性菜单">
+<meta name="twitter:description" content="&amp;#x5B9E;&amp;#x73B0;&amp;#x6E90;&amp;#x7801;&amp;#xFF1A;12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head">
+<meta name="twitter:image" content="http://everyding.github.io/2016/04/09/actual-flex-menu/弹性菜单.gif">
+  
+    <link rel="alternative" href="/atom.xml" title="eval&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-actual-flex-menu" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【实战】弹性菜单
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/09/actual-flex-menu/" class="article-date">
+  <time datetime="2016-04-09T11:04:04.000Z" itemprop="datePublished">2016-04-09 19:04:04</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;"><a href="#&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;"></a>&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#x5E26;&#x900F;&#x89C6;&#x6548;&#x679C;&#x7684;&#x5F39;&#x6027;&#x83DC;&#x5355;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        ul{width: 600px;height: 40px;background-color: #eee;padding: 0;margin: 0 auto;}</span></span><br><span class="line"><span class="undefined">        li{list-style: none;float: left;width: 150px;height: 40px;line-height: 40px;text-align: center;cursor: pointer;}</span></span><br><span class="line"><span class="undefined">        #ul1{position: relative;top: 100px;}</span></span><br><span class="line"><span class="undefined">        #ul3{color: white;position: absolute;left: 0;top: 0;background-color: transparent;}</span></span><br><span class="line"><span class="undefined">        #mark{width: 150px;position: absolute;top: 0;left: 0;background-color: pink;overflow: hidden;}</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x9996;&#x9875;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x65B0;&#x95FB;&#x4E2D;&#x5FC3;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x4EA7;&#x54C1;&#x5217;&#x8868;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x5173;&#x4E8E;&#x6211;&#x4EEC;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;mark&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul3&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x9996;&#x9875;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x65B0;&#x95FB;&#x4E2D;&#x5FC3;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x4EA7;&#x54C1;&#x5217;&#x8868;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x5173;&#x4E8E;&#x6211;&#x4EEC;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var lis = document.getElementById(&apos;ul2&apos;).getElementsByTagName(&apos;li&apos;),</span></span><br><span class="line"><span class="undefined">        mark = document.getElementById(&apos;mark&apos;),</span></span><br><span class="line"><span class="undefined">        ul3 = document.getElementById(&apos;ul3&apos;),</span></span><br><span class="line"><span class="undefined">        iSpeed = 0,</span></span><br><span class="line"><span class="undefined">        i = 0;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    for (; i &lt; lis.length; i++) {</span></span><br><span class="line"><span class="undefined">        lis[i].onmouseover = lis[i].onmouseout = function () {</span></span><br><span class="line"><span class="undefined">            animate(this.offsetLeft);</span></span><br><span class="line"><span class="undefined">        };</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    function animate(iTarget) {</span></span><br><span class="line"><span class="undefined">        clearInterval(mark.timer);</span></span><br><span class="line"><span class="undefined">        mark.timer = setInterval(function () {</span></span><br><span class="line"><span class="undefined">            var curOffsetLeft = mark.offsetLeft;</span></span><br><span class="line"><span class="undefined">            iSpeed += (iTarget - curOffsetLeft) / 7;</span></span><br><span class="line"><span class="undefined">            iSpeed *= 0.75;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            if (Math.abs(iSpeed) &lt; 1 &amp;&amp; Math.abs(iTarget - curOffsetLeft) &lt; 1) {</span></span><br><span class="line"><span class="undefined">                clearInterval(mark.timer);</span></span><br><span class="line"><span class="undefined">                mark.style.left = iTarget + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">                ul3.style.left = -iTarget + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">            } else {</span></span><br><span class="line"><span class="undefined">                var tmpOL = curOffsetLeft + iSpeed;</span></span><br><span class="line"><span class="undefined">                mark.style.left = tmpOL + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">                ul3.style.left = -tmpOL + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">            }</span></span><br><span class="line"><span class="undefined">        }, 20);</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2016/04/09/actual-flex-menu/&#x5F39;&#x6027;&#x83DC;&#x5355;.gif" alt="&#x5F39;&#x6027;&#x83DC;&#x5355;&#x6548;&#x679C;"></p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/10/speed-or-time-diff-for-animate/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          速度版和时间版运动区别
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/09/javascript-base-animate/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript中的运动</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-actual-flex-menu" data-title="【实战】弹性菜单" data-url="http://everyding.github.io/2016/04/09/actual-flex-menu/" data-limit="50"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:'eval'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/everyding" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2019 eval 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/everyding" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

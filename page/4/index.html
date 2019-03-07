@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>eval&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="丁一的个人播客 专注互联网技术开发">
+<meta property="og:type" content="website">
+<meta property="og:title" content="eval&#39;s blog">
+<meta property="og:url" content="http://everyding.github.io/page/4/index.html">
+<meta property="og:site_name" content="eval&#39;s blog">
+<meta property="og:description" content="丁一的个人播客 专注互联网技术开发">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="eval&#39;s blog">
+<meta name="twitter:description" content="丁一的个人播客 专注互联网技术开发">
+  
+    <link rel="alternative" href="/atom.xml" title="eval&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-actual-flex-menu" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/actual-flex-menu/">【实战】弹性菜单</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/09/actual-flex-menu/" class="article-date">
+  <time datetime="2016-04-09T11:04:04.000Z" itemprop="datePublished">2016-04-09 19:04:04</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;"><a href="#&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;"></a>&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF1A;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#x5E26;&#x900F;&#x89C6;&#x6548;&#x679C;&#x7684;&#x5F39;&#x6027;&#x83DC;&#x5355;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        ul{width: 600px;height: 40px;background-color: #eee;padding: 0;margin: 0 auto;}</span></span><br><span class="line"><span class="undefined">        li{list-style: none;float: left;width: 150px;height: 40px;line-height: 40px;text-align: center;cursor: pointer;}</span></span><br><span class="line"><span class="undefined">        #ul1{position: relative;top: 100px;}</span></span><br><span class="line"><span class="undefined">        #ul3{color: white;position: absolute;left: 0;top: 0;background-color: transparent;}</span></span><br><span class="line"><span class="undefined">        #mark{width: 150px;position: absolute;top: 0;left: 0;background-color: pink;overflow: hidden;}</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x9996;&#x9875;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x65B0;&#x95FB;&#x4E2D;&#x5FC3;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x4EA7;&#x54C1;&#x5217;&#x8868;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x5173;&#x4E8E;&#x6211;&#x4EEC;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;mark&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ul3&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x9996;&#x9875;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x65B0;&#x95FB;&#x4E2D;&#x5FC3;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x4EA7;&#x54C1;&#x5217;&#x8868;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#x5173;&#x4E8E;&#x6211;&#x4EEC;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var lis = document.getElementById(&apos;ul2&apos;).getElementsByTagName(&apos;li&apos;),</span></span><br><span class="line"><span class="undefined">        mark = document.getElementById(&apos;mark&apos;),</span></span><br><span class="line"><span class="undefined">        ul3 = document.getElementById(&apos;ul3&apos;),</span></span><br><span class="line"><span class="undefined">        iSpeed = 0,</span></span><br><span class="line"><span class="undefined">        i = 0;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    for (; i &lt; lis.length; i++) {</span></span><br><span class="line"><span class="undefined">        lis[i].onmouseover = lis[i].onmouseout = function () {</span></span><br><span class="line"><span class="undefined">            animate(this.offsetLeft);</span></span><br><span class="line"><span class="undefined">        };</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    function animate(iTarget) {</span></span><br><span class="line"><span class="undefined">        clearInterval(mark.timer);</span></span><br><span class="line"><span class="undefined">        mark.timer = setInterval(function () {</span></span><br><span class="line"><span class="undefined">            var curOffsetLeft = mark.offsetLeft;</span></span><br><span class="line"><span class="undefined">            iSpeed += (iTarget - curOffsetLeft) / 7;</span></span><br><span class="line"><span class="undefined">            iSpeed *= 0.75;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            if (Math.abs(iSpeed) &lt; 1 &amp;&amp; Math.abs(iTarget - curOffsetLeft) &lt; 1) {</span></span><br><span class="line"><span class="undefined">                clearInterval(mark.timer);</span></span><br><span class="line"><span class="undefined">                mark.style.left = iTarget + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">                ul3.style.left = -iTarget + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">            } else {</span></span><br><span class="line"><span class="undefined">                var tmpOL = curOffsetLeft + iSpeed;</span></span><br><span class="line"><span class="undefined">                mark.style.left = tmpOL + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">                ul3.style.left = -tmpOL + &apos;px&apos;;</span></span><br><span class="line"><span class="undefined">            }</span></span><br><span class="line"><span class="undefined">        }, 20);</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2016/04/09/actual-flex-menu/&#x5F39;&#x6027;&#x83DC;&#x5355;.gif" alt="&#x5F39;&#x6027;&#x83DC;&#x5355;&#x6548;&#x679C;"></p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript-base-animate" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/javascript-base-animate/">JavaScript中的运动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/09/javascript-base-animate/" class="article-date">
+  <time datetime="2016-04-09T05:23:47.000Z" itemprop="datePublished">2016-04-09 13:23:47</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="&#x539F;&#x7406;"><a href="#&#x539F;&#x7406;" class="headerlink" title="&#x539F;&#x7406;"></a>&#x539F;&#x7406;</h2><blockquote>
+<p>&#x8FD0;&#x52A8;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5728;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x6539;&#x53D8;&#x5143;&#x7D20; <code>width</code>&#x3001;<code>height</code>&#x3001;<code>top</code>&#x3001;<code>right</code>&#x3001;<code>bottom</code>&#x3001;<code>left</code>&#x548C;<code>opactiy</code>&#x7684;&#x503C;&#xFF0C;&#x5230;&#x8FBE;&#x76EE;&#x7684;&#x540E;&#x505C;&#x6B62;&#x3002;</p>
+</blockquote>
+<h2 id="&#x57FA;&#x7840;&#x8FD0;&#x52A8;"><a href="#&#x57FA;&#x7840;&#x8FD0;&#x52A8;" class="headerlink" title="&#x57FA;&#x7840;&#x8FD0;&#x52A8;"></a>&#x57FA;&#x7840;&#x8FD0;&#x52A8;</h2><ul>
+<li>&#x5300;&#x901F;&#x8FD0;&#x52A8;</li>
+<li>&#x7F13;&#x51B2;&#x8FD0;&#x52A8;</li>
+<li>&#x5F39;&#x6027;&#x8FD0;&#x52A8;</li>
+</ul>
+<h3 id="&#x4E00;-&#x5300;&#x901F;&#x8FD0;&#x52A8;"><a href="#&#x4E00;-&#x5300;&#x901F;&#x8FD0;&#x52A8;" class="headerlink" title="&#x4E00;.&#x5300;&#x901F;&#x8FD0;&#x52A8;"></a>&#x4E00;.&#x5300;&#x901F;&#x8FD0;&#x52A8;</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * &#x516C;&#x5F0F;&#xFF1A;</span></span><br><span class="line"><span class="comment"> * &#x901F;&#x5EA6;&#x6052;&#x5B9A;</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">var</span> iSpeed = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">ele, iTarget</span>) </span>{</span><br><span class="line">    clearInterval(ele.timer);</span><br><span class="line">    ele.timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> curOffsetLeft = ele.offsetLeft;</span><br><span class="line">        <span class="keyword">if</span> (curOffsetLeft &gt;= iTarget) {</span><br><span class="line">            clearInterval(ele.timer);</span><br><span class="line">            ele.style.left = iTarget + <span class="string">&apos;px&apos;</span>;</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            ele.style.left = curOffsetLeft + iSpeed + <span class="string">&apos;px&apos;</span>;</span><br><span class="line">        }</span><br><span class="line">    }, <span class="number">20</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><img src="/2016/04/09/javascript-base-animate/&#x5300;&#x901F;&#x8FD0;&#x52A8;.gif" alt="&#x5300;&#x901F;&#x8FD0;&#x52A8;&#x6548;&#x679C;"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/09/javascript-base-animate/#more">More...</a>
+          </p>
+        
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-front-end-learning-resource" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/front-end-learning-resource/">前端学习资源整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/09/front-end-learning-resource/" class="article-date">
+  <time datetime="2016-04-09T03:24:05.000Z" itemprop="datePublished">2016-04-09 11:24:05</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2016/04/09/front-end-learning-resource/rm.jpg" alt="&#x6700;&#x8FD1;&#x6BD4;&#x8F83;&#x706B;&#x7684;&#x51E0;&#x672C;&#x4E66;"></p>
+<h2 id="&#x5E38;&#x7528;&#x67E5;&#x8BE2;&#x624B;&#x518C;"><a href="#&#x5E38;&#x7528;&#x67E5;&#x8BE2;&#x624B;&#x518C;" class="headerlink" title="&#x5E38;&#x7528;&#x67E5;&#x8BE2;&#x624B;&#x518C;"></a>&#x5E38;&#x7528;&#x67E5;&#x8BE2;&#x624B;&#x518C;</h2><blockquote>
+<ul>
+<li><a href="http://caniuse.com/" target="_blank" rel="noopener">Can I use</a></li>
+<li><a href="http://devdocs.io/" target="_blank" rel="noopener">DevDocs</a></li>
+<li><a href="https://developers.google.com/chrome-developer-tools/?hl=zh-CN" target="_blank" rel="noopener">DevTools</a></li>
+<li><a href="http://whycss.com/" target="_blank" rel="noopener">&#x5BFC;&#x822A;</a></li>
+<li><a href="http://overapi.com/" target="_blank" rel="noopener">OverAPI</a></li>
+<li><a href="http://html5ify.com/fks/fks_chart/" target="_blank" rel="noopener">html5ify.com/fks/fks_chart/</a></li>
+</ul>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/09/front-end-learning-resource/#more">More...</a>
+          </p>
+        
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weixin-auth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/08/weixin-auth/">微信页面授权登陆</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/08/weixin-auth/" class="article-date">
+  <time datetime="2016-04-08T07:50:14.000Z" itemprop="datePublished">2016-04-08 15:50:14</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;"><a href="#&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;" class="headerlink" title="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;"></a>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;&#x914D;&#x7F6E;</h3><p>&#x9996;&#x5148;&#x767B;&#x9646;<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x5E73;&#x53F0;</a>&#xFF0C;&#x70B9;&#x51FB;&#x5DE6;&#x4FA7;&#x83DC;&#x5355; &#x5F00;&#x53D1; -&gt; &#x63A5;&#x53E3;&#x6743;&#x9650;&#xFF0C;&#x627E;&#x5230;&#x2018;&#x7F51;&#x9875;&#x6388;&#x6743;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x2019;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><img src="/2016/04/08/weixin-auth/1.png" alt></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/08/weixin-auth/#more">More...</a>
+          </p>
+        
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-see-end" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/17/see-end/">侃侃--结局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/12/17/see-end/" class="article-date">
+  <time datetime="2015-12-17T05:50:08.000Z" itemprop="datePublished">2015-12-17 13:50:08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x3010;warning&#xFF1A;&#x672C;&#x54C1;&#x672A;&#x6210;&#x5E74;&#x4EBA;&#x8BF7;&#x5728;&#x7236;&#x6BCD;&#x966A;&#x540C;&#x4E0B;&#x89C2;&#x770B;&#xFF0C;&#x7531;&#x4E8E;&#x53EF;&#x80FD;&#x6D89;&#x53CA;**&#x5185;&#x5BB9;&#x5E26;&#x6765;&#x4E0D;&#x826F;&#x5F71;&#x54CD;&#x672C;&#x4EBA;&#x6982;&#x4E0D;&#x8D1F;&#x8D23;&#x3002;&#x53E6;&#xFF1A;&#x624B;&#x673A;&#x7528;&#x6237;&#x614E;&#x5165;&#xFF0C;&#x571F;&#x8C6A;&#x8BF7;&#x65E0;&#x89C6;&#xFF01;&#x672C;&#x6545;&#x4E8B;&#x7EAF;&#x5C5E;&#x771F;&#x5B9E;&#xFF01;&#x3011;</p>
+<p>&#x3010;&#x5E8F;&#x3011;</p>
+<p>&#x8DDD;&#x4E0A;&#x6B21;&#x65E5;&#x5FD7;&#x66F4;&#x65B0;&#x5DF2;&#x7ECF;&#x6709;4&#x5E74;&#x591A;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x4EE3;&#x4EBA;&#x79BB;&#x4E0D;&#x5F00;&#x7F51;&#x7EDC;&#xFF0C;&#x7279;&#x522B;&#x662F;80&#x3001;90&#x540E;&#xFF0C;&#x50CF;&#x5F53;&#x521D;&#x61F5;&#x61C2;&#x65F6;&#x671F;&#x5927;&#x5BB6;&#x90FD;&#x7231;&#x73A9;QQZone&#xFF0C;&#x53EF;&#x662F;&#x5047;&#x5982;&#x73B0;&#x5728;&#x7528;&#x5B83;&#x5199;&#x70B9;&#x513F;&#x4E1C;&#x897F;&#xFF0C;&#x53EF;&#x80FD;&#x5927;&#x5BB6;&#x90FD;&#x89C9;&#x5F97;&#x77EB;&#x60C5;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;&#x6B64;&#x58F0;&#x660E;po&#x4E3B;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x6D53;&#x539A;&#x60C5;&#x6000;&#x7684;&#x4EBA;&#xFF0C;&#x4E5F;&#x8BA9;&#x4F83;&#x4F83;&#x7BC7;&#x5E8F;&#x5217;&#x6587;&#x7AE0;&#x753B;&#x4E0A;&#x4E00;&#x4E2A;&#x5706;&#x6EE1;&#x7684;&#x53E5;&#x53F7;&#x3002;</p>
+<p>&#x3010;&#x63A8;&#x8350;&#x6B4C;&#x66F2;&#x3011;</p>
+<p>1.&#x300A;&#x8BB2;&#x4E0D;&#x51FA;&#x518D;&#x89C1;&#x300B;&#xFF08;&#x8BE5;&#x66F2;&#x76EE;&#x5728;&#x5F20;&#x65E5;&#x5929;&#xFF08;&#x8001;&#x56DB;&#xFF09;&#x7684;&#x8F66;&#x8F7D;CD&#x4E2D;&#x65E0;&#x610F;&#x542C;&#x5230;&#x7684;&#xFF0C;&#x662F;&#x5728;2013&#x5E74;&#x5927;&#x9189;&#x4E00;&#x573A;&#x56DE;&#x6C49;&#x53E3;&#x9014;&#x4E2D;&#xFF0C;&#x8FD4;&#x4EAC;&#x540E;&#x627E;&#x4E86;&#x6574;&#x6574;&#x4E00;&#x5929;&#x624D;&#x627E;&#x5230;&#x6B4C;&#x540D;&#xFF0C;&#x8C2D;&#x6821;&#x957F;&#x7684;&#xFF09;<br>2.&#x300A;Whataya Want From Me&#x300B; &#x2013; Adam Lambert<br>3.&#x300A;The Catalyst&#x300B; &#x2013; Linkin Park&#xFF08;po&#x4E3B;&#x5E1D;&#x90FD;&#x89C1;&#x8BC1;Linkin Park&#x7CBE;&#x5F69;&#x6F14;&#x7ECE;&#xFF0C;&#x4ED6;&#x7684;&#x597D;&#x6B4C;&#x592A;&#x591A;&#xFF0C;&#x73A9;PC Game&#x5BF9;&#x4ED6;&#x662F;&#x5F88;&#x4E86;&#x89E3;&#xFF0C;&#x5C31;&#x4E0D;&#x7528;&#x63D0;In The End&#x3001;Numb&#x2026;&#xFF09;<br>4.&#x300A;&#x591C;&#x7A7A;&#x4E2D;&#x6700;&#x4EAE;&#x7684;&#x661F;&#x300B;&#x3001;&#x300A;1987&#x6211;&#x4E0D;&#x77E5;&#x4F1A;&#x9047;&#x89C1;&#x4F60;&#x300B;&#xFF08;&#x8FD9;&#x7B97;&#x5F97;&#x4E0A;&#x5F53;&#x4E0B;&#x6BD4;&#x8F83;&#x4F18;&#x79C0;&#x7684;&#x4E2D;&#x6587;&#x6B4C;&#x66F2;&#x4E86;&#xFF0C;&#x81F3;&#x5C11;po&#x4E3B;&#x8FD9;&#x6837;&#x8BA4;&#x4E3A;&#xFF09;<br>5.&#x300A;&#x4E00;&#x751F;&#x6240;&#x7231;&#x300B;&#xFF08;&#x5927;&#x8BDD;&#x897F;&#x6E38;&#x5171;&#x770B;&#x4E86;3-5&#x904D;&#xFF0C;&#x4E5F;&#x5C31;&#x8BB0;&#x4E0B;&#x4E86;&#xFF09;<br>&#x8BF4;&#x660E;&#xFF1A;&#x8FD9;&#x4E9B;&#x53EF;&#x80FD;&#x4E0D;&#x9002;&#x5408;&#x5EB7;&#x65E5;&#x5929;&#xFF08;&#x8001;&#x5927;&#xFF09;&#x300A;&#x4F60;&#x7684;&#x627F;&#x8BFA;&#x300B;&#xFF08;&#x7CA4;&#x8BED;&#x7248;&#x6BD4;&#x8F83;&#x8010;&#x542C;&#xFF09;&#xFF0C;&#x53F6;&#x65E5;&#x72D7;&#xFF08;&#x8001;&#x5E7A;&#xFF09;&#x300A;&#x624B;&#x5FC3;&#x624B;&#x80CC;&#x300B;&#x7B49;&#x98CE;&#x683C;&#xFF0C;&#x8BF7;&#x614E;&#x542C;&#xFF01;&#x5176;&#x5B9E;&#x6731;&#x65E5;&#x5929;&#xFF08;&#x8001;&#x4E94;&#xFF09;&#x63A8;&#x8350;&#x7684;&#x300A;&#x7687;&#x540E;&#x5927;&#x9053;&#x4E1C;&#x300B;&#x8FD8;&#x662F;&#x5F88;&#x4E0D;&#x9519;&#x3002;</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/12/17/see-end/#more">More...</a>
+          </p>
+        
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/everyding" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2019 eval 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/everyding" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>跨域解决方案 | eval&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x2022; &amp;#x524D;&amp;#x671F;&amp;#x51C6;&amp;#x5907;&amp;#x7528;WAMP&amp;#x642D;&amp;#x5EFA;&amp;#x4E24;&amp;#x4E2A;&amp;#x7AD9;&amp;#x70B9;&amp;#x5206;&amp;#x522B;&amp;#xFF1A;http://www.example.com &amp;#x3001; http://api.example.com&amp;#xFF0C;&amp;#x5F88;&amp;#x66">
+<meta name="keywords" content="跨域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域解决方案">
+<meta property="og:url" content="http://everyding.github.io/2016/04/16/cross-domain/index.html">
+<meta property="og:site_name" content="eval&#39;s blog">
+<meta property="og:description" content="&amp;#x2022; &amp;#x524D;&amp;#x671F;&amp;#x51C6;&amp;#x5907;&amp;#x7528;WAMP&amp;#x642D;&amp;#x5EFA;&amp;#x4E24;&amp;#x4E2A;&amp;#x7AD9;&amp;#x70B9;&amp;#x5206;&amp;#x522B;&amp;#xFF1A;http://www.example.com &amp;#x3001; http://api.example.com&amp;#xFF0C;&amp;#x5F88;&amp;#x66">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-07T06:52:28.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨域解决方案">
+<meta name="twitter:description" content="&amp;#x2022; &amp;#x524D;&amp;#x671F;&amp;#x51C6;&amp;#x5907;&amp;#x7528;WAMP&amp;#x642D;&amp;#x5EFA;&amp;#x4E24;&amp;#x4E2A;&amp;#x7AD9;&amp;#x70B9;&amp;#x5206;&amp;#x522B;&amp;#xFF1A;http://www.example.com &amp;#x3001; http://api.example.com&amp;#xFF0C;&amp;#x5F88;&amp;#x66">
+  
+    <link rel="alternative" href="/atom.xml" title="eval&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-cross-domain" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨域解决方案
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/16/cross-domain/" class="article-date">
+  <time datetime="2016-04-16T05:22:36.000Z" itemprop="datePublished">2016-04-16 13:22:36</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="&#x2022;-&#x524D;&#x671F;&#x51C6;&#x5907;"><a href="#&#x2022;-&#x524D;&#x671F;&#x51C6;&#x5907;" class="headerlink" title="&#x2022; &#x524D;&#x671F;&#x51C6;&#x5907;"></a>&#x2022; &#x524D;&#x671F;&#x51C6;&#x5907;</h2><p>&#x7528;WAMP&#x642D;&#x5EFA;&#x4E24;&#x4E2A;&#x7AD9;&#x70B9;&#x5206;&#x522B;&#xFF1A;<code>http://www.example.com</code> &#x3001; <code>http://api.example.com</code>&#xFF0C;&#x5F88;&#x663E;&#x7136;&#x7B2C;&#x4E00;&#x4E2A;&#x7AD9;&#x70B9;&#x662F;&#x4E3B;&#x7AD9;&#x70B9;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7AD9;&#x70B9;&#x662F;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x7AD9;&#x70B9;&#xFF08;&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x67B6;&#x6784;&#x4E0A;&#x4E5F;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4E3A;&#x63D0;&#x4F9B;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x4E13;&#x95E8;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x7AD9;&#x70B9;&#x8BF8;&#x5982;&#xFF1A;<code>http://assets.example.com</code> &#xFF09;&#x3002;</p>
+<h2 id="&#x2022;-JSONP&#x89E3;&#x51B3;GET&#x8DE8;&#x57DF;"><a href="#&#x2022;-JSONP&#x89E3;&#x51B3;GET&#x8DE8;&#x57DF;" class="headerlink" title="&#x2022; JSONP&#x89E3;&#x51B3;GET&#x8DE8;&#x57DF;"></a>&#x2022; JSONP&#x89E3;&#x51B3;GET&#x8DE8;&#x57DF;</h2><p>&#x5173;&#x4E8E;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x51FA;&#x73B0;&#x7684;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668; <code>&#x540C;&#x6E90;&#x7B56;&#x7565;</code> &#xFF0C;&#x672C;&#x6587;&#x5C31;&#x4E0D;&#x4E00;&#x4E00;&#x6982;&#x8FF0;&#x4E86;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x8BB2;&#x5E72;&#x8D27;&#xFF0C;JSON&#x548C;JSONP&#x5176;&#x5B9E;&#x5C31;&#x50CF;Java&#x548C;JavaScript&#x7684;&#x533A;&#x522B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x96F7;&#x950B;&#x548C;&#x96F7;&#x950B;&#x5854;&#x7684;&#x533A;&#x522B;&#xFF0C;JSONP&#x662F;&#x6211;&#x4EEC;&#x7A0B;&#x5E8F;&#x733F;&#x60F3;&#x51FA;&#x7684;&#x8DE8;&#x57DF;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x8DDF;JSON&#x6CA1;&#x6709;&#x529E;&#x6BDB;&#x7EBF;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x4E3E;&#x4E00;&#x4E2A;&#x901A;&#x4FD7;&#x6613;&#x61C2;&#x7684;&#x6817;&#x5B50;&#xFF1A;</p>
+<p>&#x9996;&#x5148;&#x5728; <code>http://api.example.com</code> &#x57DF;&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF1A;get_user_info.php&#xFF0C;&#x5176;&#x5185;&#x5BB9;</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$user_info = <span class="string">&apos;{ &quot;name&quot;: &quot;&#x5F20;&#x4E09;&quot;, &quot;age&quot;: &quot;18&quot; }&apos;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;get_user_info($user_info)&quot;</span>;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>&#x7136;&#x540E;&#x5728; <code>http://www.example.com</code> &#x57DF;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF1A;index.html&#xFF0C;&#x5176;&#x5185;&#x5BB9;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">get_user_info</span>(<span class="params">data</span>) </span>{</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="undefined">    }</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://api.example.com/get_user_info.php&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x6700;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5176;&#x5B9E;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6700;&#x57FA;&#x7840;&#x7684;JSONP&#x8DE8;&#x57DF;&#xFF0C;&#x5F88;&#x663E;&#x7136;&#x6211;&#x4EEC;&#x5229;&#x7528;&#x4E86;script&#x6807;&#x7B7E;&#x53D1;&#x9001;GET&#x8BF7;&#x6C42;&#xFF0C;&#x5176;&#x5B9E;jQuery&#x7684;&#x5B9E;&#x73B0;&#x4E5F;&#x662F;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;<strong>JSONP&#x53EA;&#x652F;&#x6301;GET&#x8BF7;&#x6C42;</strong>&#x3002;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax({</span><br><span class="line">    url: <span class="string">&apos;http://api.example.com/get_user_info.php&apos;</span>,</span><br><span class="line">    dataType: <span class="string">&apos;jsonp&apos;</span>,</span><br><span class="line">    jsonpCallback: <span class="string">&apos;get_user_info&apos;</span></span><br><span class="line">}).done(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+<h2 id="&#x2022;-&#x8BBE;&#x7F6E;Access-Control-Allow-Origin&#x54CD;&#x5E94;&#x5934;"><a href="#&#x2022;-&#x8BBE;&#x7F6E;Access-Control-Allow-Origin&#x54CD;&#x5E94;&#x5934;" class="headerlink" title="&#x2022; &#x8BBE;&#x7F6E;Access-Control-Allow-Origin&#x54CD;&#x5E94;&#x5934;"></a>&#x2022; &#x8BBE;&#x7F6E;Access-Control-Allow-Origin&#x54CD;&#x5E94;&#x5934;</h2><p>&#x663E;&#x7136;JSONP&#x53EA;&#x652F;&#x6301;GET&#x8BF7;&#x6C42;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;POST&#x8BF7;&#x6C42;&#x5B83;&#x5C31;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;&#x54CD;&#x5E94;&#x5934;Access-Control-Allow-Origin&#xFF0C;&#x5E76;&#x4E14;&#x6DFB;&#x52A0;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x7684;&#x57DF;&#x540D;</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">&apos;Access-Control-Allow-Origin: http://www.example.com&apos;</span>);</span><br><span class="line">$user_info = <span class="string">&apos;{ &quot;name&quot;: &quot;&#x5F20;&#x4E09;&quot;, &quot;age&quot;: &quot;18&quot; }&apos;</span>;</span><br><span class="line"><span class="keyword">echo</span> $user_info;</span><br></pre></td></tr></table></figure>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x54CD;&#x5E94;&#x5934;&#x5141;&#x8BB8;&#x8DE8;&#x57DF;&#x7684;&#x57DF;&#x540D;&#x7ED3;&#x5C3E;&#x4E0D;&#x8981;&#x52A0;&#x2018;/&#x2019;&#xFF0C;&#x8BF8;&#x5982; <code>header(&apos;Access-Control-Allow-Origin: http://www.example.com/&apos;);</code> &#xFF0C;&#x5047;&#x5982;&#x9700;&#x8981;&#x5141;&#x8BB8;&#x8DE8;&#x591A;&#x4E2A;&#x57DF;&#x540D;&#x9700;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$origin = <span class="keyword">isset</span>($_SERVER[<span class="string">&apos;HTTP_ORIGIN&apos;</span>])? $_SERVER[<span class="string">&apos;HTTP_ORIGIN&apos;</span>] : <span class="string">&apos;&apos;</span>;  </span><br><span class="line"></span><br><span class="line">$allow_origin = <span class="keyword">array</span>(<span class="string">&apos;http://www.example.com&apos;</span>, <span class="string">&apos;http://www.example2.com&apos;</span>); </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(in_array($origin, $allow_origin)){  </span><br><span class="line">    header(<span class="string">&apos;Access-Control-Allow-Origin:&apos;</span>.$origin);       </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;Access-Control-Allow-Origin&#x54CD;&#x5E94;&#x5934;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;&#xFF0C;GET/POST&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x90FD;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="&#x2022;-Apache&#x53CD;&#x5411;&#x4EE3;&#x7406;"><a href="#&#x2022;-Apache&#x53CD;&#x5411;&#x4EE3;&#x7406;" class="headerlink" title="&#x2022; Apache&#x53CD;&#x5411;&#x4EE3;&#x7406;"></a>&#x2022; Apache&#x53CD;&#x5411;&#x4EE3;&#x7406;</h2><h3 id="&#x6B65;&#x9AA4;&#x4E00;"><a href="#&#x6B65;&#x9AA4;&#x4E00;" class="headerlink" title="&#x6B65;&#x9AA4;&#x4E00;"></a>&#x6B65;&#x9AA4;&#x4E00;</h3><p>&#x914D;&#x7F6E;Apache&#x7684;httpd.conf&#x6587;&#x4EF6;&#xFF0C;&#x53D6;&#x6D88;&#x5982;&#x4E0B;&#x6CE8;&#x91CA;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LoadModule proxy_module modules/mod_proxy.so</span><br><span class="line">LoadModule proxy_connect_module modules/mod_proxy_connect.so</span><br><span class="line">LoadModule proxy_ftp_module modules/mod_proxy_ftp.so</span><br><span class="line">LoadModule proxy_http_module modules/mod_proxy_http.so</span><br></pre></td></tr></table></figure>
+<h3 id="&#x6B65;&#x9AA4;&#x4E8C;"><a href="#&#x6B65;&#x9AA4;&#x4E8C;" class="headerlink" title="&#x6B65;&#x9AA4;&#x4E8C;"></a>&#x6B65;&#x9AA4;&#x4E8C;</h3><p>&#x914D;&#x7F6E;httpd-vhosts.conf&#x6587;&#x4EF6;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot &quot;D:/workspace/tech/www.example.com&quot;</span><br><span class="line">    ServerName www.example.com</span><br><span class="line">        </span><br><span class="line">    ##&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x8BBE;&#x7F6E;</span><br><span class="line">    ProxyPass /action http://api.example.com/action</span><br><span class="line">    ProxyPassReverse /action http://api.example.com/action</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x6B65;&#x9AA4;&#x4E09;"><a href="#&#x6B65;&#x9AA4;&#x4E09;" class="headerlink" title="&#x6B65;&#x9AA4;&#x4E09;"></a>&#x6B65;&#x9AA4;&#x4E09;</h3><p>&#x4FEE;&#x6539;&#x4E3B;&#x7AD9;index.html&#x6587;&#x4EF6;&#xFF0C;&#x6CE8;&#x610F;&#x6B64;&#x65F6;&#x4E0D;&#x8981;&#x6DFB;&#x52A0; <code>http://api.example.com</code> &#x8FD9;&#x4E2A;&#x57DF;&#x540D;&#x524D;&#x7F00;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x505A;&#x4E86;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8BBF;&#x95EE; <code>http://www.example.com/action/get_user_info.php</code>&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x8BBF;&#x95EE; <code>http://api.example.com/action/get_user_info.php</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax({</span><br><span class="line">    url: <span class="string">&apos;action/get_user_info.php&apos;</span>,</span><br><span class="line">    dataType: <span class="string">&apos;jsonp&apos;</span>,</span><br><span class="line">    jsonpCallback: <span class="string">&apos;get_user_info&apos;</span></span><br><span class="line">}).done(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><p>&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x4E86;&#x4E09;&#x79CD;&#x6700;&#x57FA;&#x7840;&#x7684;&#x8DE8;&#x57DF;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x65E0;&#x975E;&#x5C31;&#x662F;JSONP&#x3001;&#x8BBE;&#x7F6E;Access-Control-Allow-Origin&#x54CD;&#x5E94;&#x5934;&#x548C;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x4EE3;&#x7406;&#x8FD9;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4E2A;&#x4EBA;&#x89C9;&#x5F97;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x65B9;&#x5F0F;&#x6700;&#x7B80;&#x6D01;&#x7701;&#x4E8B;&#x513F;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x3002;&#x800C;&#x5176;&#x4F59;&#x4E24;&#x79CD;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7A0B;&#x5E8F;&#x65B9;&#x5F0F;&#xFF0C;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x5F00;&#x53D1;&#x6210;&#x672C;&#x8F83;&#x5927;&#x3002;&#x5F53;&#x7136;&#x8DE8;&#x57DF;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x8BF8;&#x5982;postMessage&#x3001;iframe&#x3001;PHP&#x4E2D;curl&#x548C;flash&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x91CC;&#x9762;&#x4E5F;&#x6709;&#x8F83;&#x591A;&#x7684;&#x5751;&#xFF0C;&#x6BD4;&#x5982;&#x5F02;&#x6B65;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x5728;&#x4F4E;&#x7248;&#x672C;&#x7684;IE&#x4E0B;&#x9700;&#x8981;&#x7528;XDomainRequest&#x5BF9;&#x8C61;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/16/TweenMax-base/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TweenMax基础入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/15/css-kit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS锦囊妙计</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-cross-domain" data-title="跨域解决方案" data-url="http://everyding.github.io/2016/04/16/cross-domain/" data-limit="50"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:'eval'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/everyding" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2019 eval 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/everyding" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

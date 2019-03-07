@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>m3u8格式的视频播放器 | eval&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x8981;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E00;&amp;#x4E2A;Web&amp;#x7AEF;&amp;#x89C6;&amp;#x9891;&amp;#x64AD;&amp;#x653E;&amp;#x5668;&amp;#x529F;&amp;#x80FD;&amp;#xFF0C;&amp;#x7136;&amp;#x540E;Google&amp;#x5404;&amp;#x79CD;&amp;#x65B9">
+<meta name="keywords" content="m3u8 视频播放器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="m3u8格式的视频播放器">
+<meta property="og:url" content="http://everyding.github.io/2016/04/13/m3u8-format-video-player/index.html">
+<meta property="og:site_name" content="eval&#39;s blog">
+<meta property="og:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x8981;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E00;&amp;#x4E2A;Web&amp;#x7AEF;&amp;#x89C6;&amp;#x9891;&amp;#x64AD;&amp;#x653E;&amp;#x5668;&amp;#x529F;&amp;#x80FD;&amp;#xFF0C;&amp;#x7136;&amp;#x540E;Google&amp;#x5404;&amp;#x79CD;&amp;#x65B9">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://everyding.github.io/2016/04/13/m3u8-format-video-player/1.gif">
+<meta property="og:updated_time" content="2019-03-07T06:52:28.457Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="m3u8格式的视频播放器">
+<meta name="twitter:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x8981;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E00;&amp;#x4E2A;Web&amp;#x7AEF;&amp;#x89C6;&amp;#x9891;&amp;#x64AD;&amp;#x653E;&amp;#x5668;&amp;#x529F;&amp;#x80FD;&amp;#xFF0C;&amp;#x7136;&amp;#x540E;Google&amp;#x5404;&amp;#x79CD;&amp;#x65B9">
+<meta name="twitter:image" content="http://everyding.github.io/2016/04/13/m3u8-format-video-player/1.gif">
+  
+    <link rel="alternative" href="/atom.xml" title="eval&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-m3u8-format-video-player" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      m3u8格式的视频播放器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/13/m3u8-format-video-player/" class="article-date">
+  <time datetime="2016-04-13T12:55:25.000Z" itemprop="datePublished">2016-04-13 20:55:25</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x6700;&#x8FD1;&#x5728;&#x516C;&#x53F8;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;Web&#x7AEF;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x5668;&#x529F;&#x80FD;&#xFF0C;&#x7136;&#x540E;Google&#x5404;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x8BF8;&#x5982;&#x56FD;&#x4EA7;&#x7684;ckplayer&#x8FD9;&#x4E9B;&#xFF0C;&#x6700;&#x7EC8;&#x8FD8;&#x662F;&#x627E;&#x5230;&#x4E86;&#x56FD;&#x5916;&#x5F00;&#x6E90;&#x7684;&#x4F18;&#x79C0;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5F15;&#x5165;&#x4E00;&#x4E2A;js&#x6587;&#x4EF6;swfobject.js&#x548C;&#x4E24;&#x4E2A;flash&#x7EC4;&#x4EF6;&#xFF1A;OSMF&#x548C;HLSProvider&#x6765;&#x64AD;&#x653E;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x51E0;&#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li><a href="http://osmf.org" target="_blank" rel="noopener">http://osmf.org</a></li>
+<li><a href="http://osmf.org/dev/2.0gm/StrobeMediaPlayback.html" target="_blank" rel="noopener">http://osmf.org/dev/2.0gm/StrobeMediaPlayback.html</a></li>
+<li><a href="https://github.com/mangui/HLSprovider" target="_blank" rel="noopener">https://github.com/mangui/HLSprovider</a></li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<p><a href="https://zh.wikipedia.org/wiki/M3U" target="_blank" rel="noopener">m3u8</a>&#x683C;&#x5F0F;&#x6211;&#x5C31;&#x4E0D;&#x4ECB;&#x7ECD;&#x4E86;&#xFF0C;&#x73B0;&#x5728;&#x6240;&#x6709;&#x7684;&#x89C6;&#x9891;&#x7F51;&#x7AD9;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x901A;&#x8FC7;m3u8&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x64AD;&#x653E;&#x89C6;&#x9891;&#x3002;</p>
+<p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x64AD;&#x653E;m3u8&#x7684;&#x89C6;&#x9891;&#x5730;&#x5740;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<h2 id="1-html&#x7684;video&#x6807;&#x7B7E;&#x65B9;&#x5F0F;"><a href="#1-html&#x7684;video&#x6807;&#x7B7E;&#x65B9;&#x5F0F;" class="headerlink" title="1.html&#x7684;video&#x6807;&#x7B7E;&#x65B9;&#x5F0F;"></a>1.html&#x7684;video&#x6807;&#x7B7E;&#x65B9;&#x5F0F;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE hmtl&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>the5fire m3u8 test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span> <span class="attr">autoplay</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;http://www.example.com/example.m3u8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x6BD4;&#x8F83;&#x9057;&#x61BE;&#x7684;&#x662F;&#x76EE;&#x524D;&#x53EA;&#x6709;Safari&#x652F;&#x6301;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x7528;&#x6027;&#x4E0D;&#x597D;&#xFF0C;&#x82E5;&#x60F3;&#x8981;&#x66F4;&#x597D;&#x7684;&#x517C;&#x5BB9;&#x5C31;&#x5FC5;&#x987B;&#x91C7;&#x7528;flash&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<h2 id="2-flash&#x65B9;&#x5F0F;"><a href="#2-flash&#x65B9;&#x5F0F;" class="headerlink" title="2.flash&#x65B9;&#x5F0F;"></a>2.flash&#x65B9;&#x5F0F;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>the5fire m3u8 test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./swfobject.js&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;player&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> flashvars = {</span></span><br><span class="line"><span class="javascript">        <span class="comment">// M3U8 url, or any other url which compatible with SMP player (flv, mp4, f4m)</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// escaped it for urls with ampersands</span></span></span><br><span class="line"><span class="javascript">        src: <span class="built_in">escape</span>(<span class="string">&quot;http://www.example.com/example.m3u8&quot;</span>),</span></span><br><span class="line"><span class="javascript">        <span class="comment">// url to OSMF HLS Plugin</span></span></span><br><span class="line"><span class="javascript">        plugin_m3u8: <span class="string">&quot;HLSProviderOSMF.swf&quot;</span>,</span></span><br><span class="line"><span class="undefined">    };</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> params = {</span></span><br><span class="line"><span class="javascript">        <span class="comment">// self-explained parameters</span></span></span><br><span class="line"><span class="javascript">        allowFullScreen: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">        allowScriptAccess: <span class="string">&quot;always&quot;</span>,</span></span><br><span class="line"><span class="javascript">        bgcolor: <span class="string">&quot;#000000&quot;</span></span></span><br><span class="line"><span class="undefined">    };</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> attrs = {</span></span><br><span class="line"><span class="javascript">        name: <span class="string">&quot;player&quot;</span></span></span><br><span class="line"><span class="undefined">    };</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    swfobject.embedSWF(</span></span><br><span class="line"><span class="javascript">        <span class="comment">// url to SMP player</span></span></span><br><span class="line"><span class="javascript">        <span class="string">&quot;StrobeMediaPlayback.swf&quot;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="comment">// div id where player will be place</span></span></span><br><span class="line"><span class="javascript">        <span class="string">&quot;player&quot;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="comment">// width, height</span></span></span><br><span class="line"><span class="javascript">        <span class="string">&quot;800&quot;</span>, <span class="string">&quot;485&quot;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="comment">// minimum flash player version required</span></span></span><br><span class="line"><span class="javascript">        <span class="string">&quot;10.2&quot;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="comment">// other parameters</span></span></span><br><span class="line"><span class="javascript">        <span class="literal">null</span>, flashvars, params, attrs</span></span><br><span class="line"><span class="undefined">    );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x662F;&#x76EE;&#x524D;Web&#x89C6;&#x9891;&#x64AD;&#x653E;&#x5668;&#xFF0C;&#x514D;&#x8D39;&#x7684;&#x6700;&#x4F18;&#x79C0;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<p><img src="/2016/04/13/m3u8-format-video-player/1.gif" alt="&#x5F53;&#x8001;&#x677F;&#x95EE;&#x662F;&#x8C01;&#x628A;&#x670D;&#x52A1;&#x5668;&#x7ED9;&#x5F04;&#x762B;&#x75EA;&#x4E86;&#x65F6;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x6837;&#x5B50;"></p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/14/record-once-PHP-redis-extension/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          记一次安装php redis拓展
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/12/github-sub-module-problem/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">github中子模块问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-m3u8-format-video-player" data-title="m3u8格式的视频播放器" data-url="http://everyding.github.io/2016/04/13/m3u8-format-video-player/" data-limit="50"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:'eval'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/everyding" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2019 eval 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/everyding" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
